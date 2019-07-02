@@ -17,10 +17,16 @@ public class Mensagem {
     }
     
     public void desisto(BaseDados base){
+        String nomePrato;
+        String tipoPrato;
         
-       String nomePrato = JOptionPane.showInputDialog(null,"Qual prato você pensou?", "Desisto", JOptionPane.PLAIN_MESSAGE);
-       String tipoPrato = JOptionPane.showInputDialog(null, nomePrato + " é _______mas Bolo de Chocolate não", "Complete", JOptionPane.PLAIN_MESSAGE);
-       base.addPratos(new Prato(nomePrato, tipoPrato));       
+        do{
+           nomePrato = JOptionPane.showInputDialog(null,"Qual prato você pensou?", "Desisto", JOptionPane.PLAIN_MESSAGE);
+        }while(nomePrato.length() < 3);
+        do{
+           tipoPrato = JOptionPane.showInputDialog(null, nomePrato + " é _______mas Bolo de Chocolate não", "Complete", JOptionPane.PLAIN_MESSAGE);
+        }while(tipoPrato.length() < 3);       
+        base.addPratos(new Prato(nomePrato, tipoPrato));       
     }
     
 }

@@ -16,7 +16,7 @@ public class BaseDados {
     }
 
     public List<Prato> getPratos() {
-        return pratos;
+        return this.pratos;
     }
     
     public void addPratos(Prato prato){
